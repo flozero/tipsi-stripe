@@ -5,13 +5,13 @@ import {
   StyleSheet,
   View,
   TouchableWithoutFeedback,
-  ViewPropTypes,
   Platform,
+  TextInput,
 } from 'react-native'
+import { ViewPropTypes } from 'deprecated-react-native-prop-types'
 import PropTypes from 'prop-types'
-import { TextInput } from 'react-native';
 
-const { State: TextInputState } = TextInput;
+const { State: TextInputState } = TextInput
 
 const FieldStylePropType = PropTypes.shape({
   ...ViewPropTypes.style,
@@ -118,7 +118,9 @@ export default class PaymentCardTextField extends Component {
     ...View.defaultProps,
   }
 
-  valid = false // eslint-disable-line react/sort-comp
+  valid = false
+
+  // eslint-disable-line react/sort-comp
   params = {
     number: '',
     expMonth: 0,
@@ -215,7 +217,7 @@ export default class PaymentCardTextField extends Component {
       backgroundColor,
     }
 
-    return (
+    return ((
       <View style={[commonStyles, viewStyles]}>
         <TouchableWithoutFeedback
           rejectResponderTermination
@@ -253,7 +255,7 @@ export default class PaymentCardTextField extends Component {
           />
         </TouchableWithoutFeedback>
       </View>
-    )
+    ))
   }
 }
 
